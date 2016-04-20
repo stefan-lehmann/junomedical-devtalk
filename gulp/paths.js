@@ -4,7 +4,7 @@ module.exports = {
 
     source: {
         templates: 'src/templates/**/*.jade',
-        slides: 'src/slides/*.jade',
+        slides: 'src/slides/**/*.jade',
         js: 'src/js/**/*.js',
         styl: 'src/styl/**/*.styl',
         img: 'src/img/**/*',

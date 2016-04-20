@@ -1,0 +1,34 @@
+extends ../../templates/slide
+
+block headline
+  include _title.jade
+
+block content
+
+  pre(title="Template")
+    code.twig.
+      <h1>{{ headline }}</h1>
+      <img src="{{ image.src }}" alt="{{ image.alt }}" />
+      <p>{{ keywords | join(', ') }}</p>
+
+  pre.fragment(title="Data")
+    code.json.
+      {
+        "headline": "Just fruits",
+        "image": {
+          "src": "/images/strawberry.jpg",
+          "alt": "A strawberry",
+        },
+        "keywords": ["Apple", "Orange", "Banana" ]
+      }
+
+  pre.fragment(title="HTML")
+    code.html.
+      <h1>Just fruits</h1>
+      <img src="/images/strawberry.jpg" alt="A strawberry" />
+      <p>Apple, Orange, Banana</p>
+
+block notes
+
+  div.
+

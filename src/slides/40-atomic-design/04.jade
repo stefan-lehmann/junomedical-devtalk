@@ -1,0 +1,37 @@
+extends ../../templates/slide
+
+block headline
+  include _title.jade
+
+block content
+
+  pre(title="HTML")
+    code.html.
+      <button class="button" title="I am a button">Click me</button>
+  pre.fragment(title="CSS")
+    code.
+      .button {
+        font-family: 'Adelle SansW01', 'Arial', sans-serif;
+        font-size: 0.75em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        letter-spacing: 0.125em;
+        display: inline-block;
+        border: solid 2px #5f6258;
+        border-radius: 100px;
+        line-height: 1.25em;
+        padding: 0.75em 1em;
+        text-align: center;
+      }
+  img.fragment(src="img/button.png")
+
+block notes
+
+  div.
+    I guess everybody would agree that taking that approach is a good idea. But what
+    does that mean practically? Let's have a look at a very simple example. Please try to
+    imagine this example atom which is a simple button. I guess this is really hard, even for
+    frontend people that are familiar with CSS.
+
+

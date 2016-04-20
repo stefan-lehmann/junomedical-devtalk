@@ -1,10 +1,12 @@
 Reveal.initialize({
-	controls: true,
+	controls: false,
 	progress: true,
 	history: true,
-	center: true,
+	center: false,
+  overview: true,
+  slideNumber: 'c/t',
 
-	transition: 'fade', // none/fade/slide/convex/concave/zoom
+	transition: 'none', // none/fade/slide/convex/concave/zoom
 
 	// Optional reveal.js plugins
 	dependencies: [
@@ -13,3 +15,16 @@ Reveal.initialize({
 		{ src: 'js/vendor/notes/notes.js', async: true }
 	]
 });
+
+
+WebFontConfig = {
+  google: { families: [ 'Open+Sans:400,600,700,300:latin' ] }
+};
+(function() {
+  var wf = document.createElement('script');
+  wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+  wf.type = 'text/javascript';
+  wf.async = 'true';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(wf, s);
+})();
