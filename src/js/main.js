@@ -24,8 +24,7 @@ Reveal.initialize({
       callback: function () {
         hljs.initHighlightingOnLoad();
       }
-    },
-    {src: 'js/vendor/notes/notes.js', async: true}
+    }
   ]
 });
 
