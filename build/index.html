@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="some description about the slides">
+    <meta name="author" content="You">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">
+              </div>
+            </div>
+            <div class="content">
+              <div class="content__inner">
+                <div class="content__chapter">Front-End Development<br>at Junomedical</div><br><br><br>Insights in our Atomic Design System
+              </div>
+            </div>
+            <aside class="notes">
+              <div>
+                Hi everybody. First I like to thank you for your coming. Today we are going to talk about
+                Junomedical on of the newer ventures of ProjectA. And in particular I want to give you some
+                insights into the front-end development.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Introduction</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/stefan.jpg" class="avatar"><small><strong>Stefan Lehmann</strong><br><br>Senior Frontend Engineer at ProjectA</small></div>
+            </div>
+            <aside class="notes">
+              <div>
+                But before that I want to introduce myself. I am Stefan Lehmann
+                Senior Frontend Engineer at ProjectA currently working on Junomedical.
+                <br>
+                <br>
+                That's me. And I hope this is the way most people see me.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Introduction</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/gobo.png" class="avatar"><small><strong>Stefan Lehmann</strong><br><br>Senior Frontend Engineer at ProjectA</small></div>
+            </div>
+            <aside class="notes">
+              <div>And this is how I see myself most of the time.</div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Introduction</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Table of Contents<br><br>
+                <ol>
+                  <li class="fragment">The Situation</li>
+                  <li class="fragment">First Steps</li>
+                  <li class="fragment">Atomic Design</li>
+                  <li class="fragment">(Living) Style Guides</li>
+                  <li class="fragment">Style Guide Driven Development</li>
+                  <li class="fragment">Proof of Concept</li>
+                </ol>
+              </div>
+            </div>
+            <aside class="notes">
+              <div>
+                So let's start by having a brief look at the table of contents. To provide some context beforehand:
+                <br>
+                <br>
+                - I will say some words about the initial situation when I started and the first steps.
+                <br>
+                - In order to explain our approach, I will sum up Atomic Design.
+                <br>
+                - I will explain why Living Style Guide isn't just a buzzword
+                <br>
+                - and what Style Guide Driven Development means.
+                <br>
+                - And finally we will check if everything worked as expected.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">The Situation</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">
+                <div class="content__chapter">The Situation</div>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+              
+              
+              
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">The Situation</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">
+                <ol>
+                  <li>new venture</li>
+                  <li class="fragment">new team</li>
+                  <li class="fragment">new Python based software stack</li>
+                  <li class="fragment">no brand</li>
+                  <li class="fragment">no design</li>
+                  <li class="fragment">hard deadline<span class="fragment">, within less than 6 weeks</span></li>
+                </ol>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">First Steps</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">
+                <div class="content__chapter">First Steps</div>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+              
+              
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">First Steps</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Name what is already there<br><br><img src="img/ClinicCompass-wireframe_Blog.jpg" height="320"><img src="img/ClinicCompass-wireframe_Bolg Article.jpg" height="320"></div>
+            </div>
+            <aside class="notes">
+              <div>
+                Naming things is the first step of understanding it. It enables you
+                collaborate with others, to share your thoughts and so on.
+                <br>
+                <br>
+                The impact of bad and good naming is commonly underestimated. Try to
+                remember a situation where a bad naming caused lot's of unnecessary trouble.
+                Or when it became to hard to change names, so you had to deal with it.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">First Steps</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Avoid bottle necks in advance<br><br>
+                <ol>
+                  <li class="fragment">automate processes beforehand</li>
+                  <li class="fragment">decouple front-end and <br> back-end development</li>
+                  <li class="fragment">modularize to reduce complexity<span class="fragment">, <br> but with care</span></li>
+                </ol>
+              </div>
+            </div>
+            <aside class="notes">
+              <div>Which is...</div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">First Steps</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Style Guide Driven Development</div>
+            </div>
+            <aside class="notes">
+              <div>
+                Style Guide Driven Development is based on Style Guides, which is no surprise.
+                <br>
+                Style Guides are highly related to Atomic Design. It's like Stan and Olli, Tom and Jerry or
+                for some of you maybe Dr. Jeckhill and Mister Hide. No matter how you think
+                of them, one is just working with the other.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Atomic Design</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">
+                <div class="content__chapter">
+                  Atomic Design
+                  
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              <div>
+                If we talk about Atomic Design. We have to mention one person.
+                This is Brad Frost. He is from Pittsburgh, PA.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Atomic Design</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/brad_frost.jpg" class="avatar">Brad Frost<br><small>Web designer, Speaker, Consultant, Musician, and Artist</small></div>
+            </div>
+            <aside class="notes">
+              <div>
+                He created the concept back in 2013 in result of the difficulties he was facing with the new web.
+                Some of you might had heard his talk at "Beyond Tellerrand" last November. Because of that, I don't want to explain the whole
+                concept at that point. He does it much better than I could. But I think it makes sense to show some
+                practical examples to explain the main idea briefly. So what does Atomic Design mean?
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Atomic Design</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><br><img src="img/01-650x487.png" width="300"><img src="img/02-650x487.png" width="300" class="fragment"><img src="img/03-650x487.png" width="300" class="fragment"></div>
+            </div>
+            <aside class="notes">
+              <div>
+                Atomic Design is an answer to the question, how to face the demands and
+                complexity that is going hand in hand with today's web.
+                <br>
+                <br>
+                This is pretty self explaining, right?
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Atomic Design</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">What makes it so difficult to handle?<br><br>
+                <div class="fragment"><img src="img/bd-jm-searchresults.png" height="320"><img src="img/d-jm-searchresults.png" height="320"><img src="img/t-jm-searchresults.png" height="320"><img src="img/s-jm-searchresults.png" height="320"></div><small class="fragment">Property changes based on media queries?</small><br><small class="fragment">Footer = 9</small><small class="fragment">&nbsp;/&nbsp;Header = 17</small>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Atomic Design</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Let's break this page  into manageable chunks.<br><br><img src="img/collage-0.png" height="420">&nbsp;&nbsp;<img src="img/collage-1.png" height="420" class="fragment"></div>
+            </div>
+            <aside class="notes">
+              <div>
+                This is the design proposal of the clinic detail page.
+                Let's break it into pieces.
+                <br>
+                <br>
+                We could slice it like this.
+                <br>
+                <br>
+                Or perhaps better this way.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Atomic Design</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Let's break this page into manageable chunks.<br><br><img src="img/collage-0.png" height="420">&nbsp;&nbsp;<img src="img/collage-3.png" height="420"></div>
+            </div>
+            <aside class="notes">
+              <div>
+                Everybody will do it differently, because auf his perspective on the page
+                and his day's form as well.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Atomic Design</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Some rules would help.<br><br>
+                <div class="fragment"><img src="img/atomic_design.png"></div>
+              </div>
+            </div>
+            <aside class="notes">
+              <div>
+                So, if we put it in a nutshell this is what Atomic Design is all about. It is a
+                methodology how to define manageable bricks to build your web pages. Everything else
+                which goes together with the concept is a result of that.
+                <br>
+                <br>
+                But we are not done yet. If we break everything into pieces to look at them more independently
+                we created new difficulties. I show you an example.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Atomic Design</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">
+                <pre title="HTML"><code class="html"><button class="button" title="I am a button">Click me</button></code></pre>
+                <pre title="CSS" class="fragment"><code>.button {
+  font-family: 'Adelle SansW01', 'Arial', sans-serif;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  letter-spacing: 0.125em;
+  display: inline-block;
+  border: solid 2px #5f6258;
+  border-radius: 100px;
+  line-height: 1.25em;
+  padding: 0.75em 1em;
+  text-align: center;
+}</code></pre><img src="img/button.png" class="fragment">
+              </div>
+            </div>
+            <aside class="notes">
+              <div>
+                This is an atom, which is a button.
+                <br>
+                With some CSS.
+                <br>
+                Please try to imagine this button. How it will look like in the browser?
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Atomic Design</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">To make Atomic Design happen, <br> we need additional tools.</div>
+            </div>
+            <aside class="notes">
+              <div></div>
+              
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">(Living) Style Guides</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">
+                <div class="content__chapter">
+                  (Living) Style Guide
+                  
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              <div>
+                So a Style Guide is this type of tool that. Please remember this Sten and Olli thing.
+                You can use Atomic Design without a Style Guide and the other way round
+                but it makes much more sense to use them in combination.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">(Living) Style Guides</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">What is a (Living) Style Guide?<br><br>
+                <ul>
+                  <li class="fragment">a documentation of the Atomic Design inventory
+                    <div class="fragment">which lives in the browser</div>
+                  </li>
+                  <li class="fragment">technically it is a website, but separate from the production website</li>
+                  <li class="fragment">can be seen as a prototyping and testing tool</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              <div>
+                At this point I want to address briefly that the term Style Guide is a bit
+                difficult to use here. Because I don't mean tools like Frontify.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">(Living) Style Guides</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Are there any ready to use tools?<br><br>
+                <div class="fragment">patternlab-node (Horizn-Studios)</div>
+                <div class="fragment">KSS Node (PETS DELI)</div><br>
+                <div class="fragment">in total <strong>86</strong> solutions on <a href="http://styleguides.io/tools.html">styleguides.io</a></div>
+              </div>
+            </div>
+            <aside class="notes">
+              <div>
+                Are there any ready to use tools? For sure!
+                <br>
+                <br>
+                We already use patternlab-node and KSS Node with some benefit.
+                <br>
+                If you want to get an overview about what is already out there. I recommend having a look at
+                styleguides.io it is another project of Brad Frost. There you can find lots of resources.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">(Living) Style Guides</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><small>css-tricks.com: Where Style Guides Fit Into Process</small>
+                <div class="image-block">
+                  <div class="image-block__title">The Sidelines</div>
+                  <div class="image-block__image"><img src="img/sidelines-1024x587.png"></div>
+                </div>
+                <div class="image-block">
+                  <div class="image-block__title">The Hippie Colony</div>
+                  <div class="image-block__image"><img src="img/colony.png"></div>
+                </div>
+                <div class="image-block">
+                  <div class="image-block__title">The Dictator</div>
+                  <div class="image-block__image"><img src="img/dictator2-1024x402.png"></div>
+                </div>
+                <div class="image-block">
+                  <div class="image-block__title">The Exhaust</div>
+                  <div class="image-block__image"><img src="img/exhaust-1024x402.png"></div>
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              <div>
+                css-tricks.com released a very nice article about different places that
+                Style-Guide could have in the web development process of a team or company.
+                <br>
+                <br>
+                Independent from what you personally think, which is the best constellation,
+                this article display very directly, that it is depending massively on peoples
+                opinion what value the Style Guide has. And if you don't take care about
+                the Style Guide you stop caring about Atomic Design.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">(Living) Style Guides</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Are there any pain points?<br><br>
+                <ul>
+                  <li class="fragment">hard to find a flexible style guide tool that is working for large projects</li>
+                  <li class="fragment">additional effort is needed to sync two code bases</li>
+                  <li class="fragment">sometimes it is hard to recognise the benefits,<br>then the whole process feels just slow</li>
+                  <li class="fragment">often the style guide dies slowly</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              <div>
+                And of course there are pain points, that are questioning the whole thing.
+                <br>
+                <br>
+                To solve them, it is necessary to go one step further.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Style Guide Driven Development</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">
+                <div class="content__chapter">
+                  Style Guide Driven Development
+                  
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Style Guide Driven Development</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Rizzo - Component API by lonelyplanet<br><br><img src="img/rizzo-output.jpg" width="600"><br><img src="img/rizzo-git.png" width="600" class="fragment"></div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Style Guide Driven Development</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Can't we do the same with affordable effort?</div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Style Guide Driven Development</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/templating-a.svg" height="500"></div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Style Guide Driven Development</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">
+                <pre title="Template"><code class="twig"><h1>{{ headline }}</h1>
+<img src="{{ image.src }}" alt="{{ image.alt }}" />
+<p>{{ keywords | join(', ') }}</p>
+</code></pre>
+                <pre title="Data" class="fragment"><code class="json">{
+  "headline": "Just fruits",
+  "image": {
+    "src": "/images/strawberry.jpg",
+    "alt": "A strawberry",
+  },
+  "keywords": ["Apple", "Orange", "Banana" ]
+}
+</code></pre>
+                <pre title="HTML" class="fragment"><code class="html"><h1>Just fruits</h1>
+<img src="/images/strawberry.jpg" alt="A strawberry" />
+<p>Apple, Orange, Banana</p>
+</code></pre>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Style Guide Driven Development</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/templating-a.svg" height="500"></div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Style Guide Driven Development</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/templating-b.svg" height="500"></div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Style Guide Driven Development</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/templating-c.svg" height="500"></div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Style Guide Driven Development</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/templating-d.svg" height="500"></div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Style Guide Driven Development</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/templating-e.svg" height="500"></div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Style Guide Driven Development</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/templating-f.svg" height="500"></div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">
+                <div class="content__chapter">
+                  "Proof of Concept"
+                  
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/styleguide-repo.png" width="800"></div>
+            </div>
+            <aside class="notes">
+              <div>
+                The Style-Guide-Tool is a node module too, It can be used with the gulp-task
+                module or separate. To keep it as flexible as possible it is just taking care of
+                the template rendering, the viewerApp, which is needed to select the elements you
+                want to view in the browser. And Browser-Sync as server for development. That is it.
+                Everything else CSS and Javascript processing, asset handling is not part of this module.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Style Guide - Template Engine config<br>
+                <pre title="gulpfile.js"><code class="js">require('gulp-tasks/tasks/styleguide')('styleguide', {
+  patterns: {
+    sourcePath: 'tnt/web/frontend/patterns',
+    sourceExt: 'j2',
+    targetExt: 'html',
+    dataExt: 'json',
+    //mockFunctionsFile: './mockFunctions.js',
+    globalsDataFile: './globals.json',
+    engine: {
+      name: 'jinja2',
+      pathToPyScript: 'render_jinja2.py',
+      port: argv.jinja2_port || 5056,
+      debug: 'stderr'
+    }
+  },
+  ...
+});
+</code></pre>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Style Guide - Viewer-App config<br>
+                <pre title="gulpfile.js"><code class="js">require('gulp-tasks/tasks/styleguide')('styleguide', {
+  ...,
+  viewerApp: {
+    dest: 'static/styleguide',
+    cssFiles: [
+      './css/patterns.css',
+      '../css/main.css',
+      '../css/fonts.css',
+      './css/overrides.css'
+    ],
+    jsFiles: ['../js/styleguide.bundle.js']
+  },
+  ...
+});
+</code></pre>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Style Guide - Browser-Sync config<br>
+                <pre title="gulpfile.js"><code class="js">require('gulp-tasks/tasks/styleguide')('styleguide', {
+  ...,
+  server: {
+    https: true,
+    port: 9000,
+    open: false,
+    urlRewriteRules: {
+      '^/static/': '/',
+      '^/api/([^\?]+)(.*)': '/mock-endpoints/$1.json$2'
+    }
+});
+</code></pre>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Issues and improvements</div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/folder-structure1.png" width="300"><img src="img/folder-structure2.png" width="300"></div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">
+                <pre title="jinja2"><code class="twig">// build in include statement
+{% include '/00-atoms/06-buttons/00-button/button.j2' %}
+{% include '/02-organisms/06-blocks/00-hero/hero.j2' %}
+</code></pre>
+                <pre title="jinja2" class="fragment"><code class="twig">// simplified include statement
+{% include 'atoms-button' %}
+{% include 'organisms-hero' %}
+</code></pre>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/folder-structure3.png" width="300"></div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">
+                <pre title="tile.json"><code class="json">{
+  "tile": {
+    "title": "Aliquam tristique",
+    "sub_title": "Pellentesque rhoncus",
+    "footer": "{% include 'molecules-link-row'.link_row %}",
+    "image": "{% include 'atom-image'.image %}",
+    "href" : "#"
+  }
+}
+</code></pre>
+                <pre title="tiles-grid.json"><code class="json">{
+  "headline": "The Header",
+  "description": "<p>Lorem ipsum dolor sit ...</p>",
+  "tiles": [
+    "{% include 'molecules-tile'.tile %}",
+    "{% include 'molecules-tile'.tile %}",
+    ...
+  ]
+}
+</code></pre>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Fast development with more that 130 items</div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Just taking care of the templates no:<br><br>images, js, fonts, css, ...</div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner"><img src="img/gulp-tasks-repo.png" width="800"></div>
+            </div>
+            <aside class="notes">
+              <div>
+                When you use gulp you have do define all tasks by you self. This provides of freedom to
+                arrange everything the way you need. And that is something I really like about gulp. This
+                also means that you often find yourself struggling with the initial setup. For such moments
+                in the very beginning of a project, Jonathan created the project-A/frontend/starter-Kit. It was
+                already pretty cool, but I had an even more modular approach in mind. I forked the Starter-Kit
+                and made it a node module. This means it is now possible to update it very easily and to pick
+                the tasks you need from that library. If some wants to participate, feel free to approach me at any time.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">Image task example<br><br>
+                <pre title="gulpfile.js"><code class="js">require('gulp-tasks/tasks/image')('images', {
+  source: 'tnt/web/frontend/patterns/**/*.{png,jpg,gif,svg,ico}',
+  dest: 'static/images',
+  svgoPlugins: [
+    {removeDimensions: true},
+    ...
+  ],
+  reCompress: true,
+  flatten: true,
+  hook: function() {}
+});
+</code></pre>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">The stack<br><br>
+                <pre title="package.json"><code class="json">...,
+"dependencies": {
+  "angular-google-maps": "^2.3.2",
+  "angular-sanitize": "^1.5.0",
+  "angular-scroll": "^1.0.0",
+  "angular-strap": "^2.3.7",
+  "angular-touch": "^1.5.0",
+  "fastclick": "git+ssh://git@github.com:junomedical/fastclick.git#v1.0.6",
+  "gulp": "github:gulpjs/gulp#4.0",
+  "gulp-tasks": "git+ssh://git@github.com:junomedical/treatntravel-gulp-tasks.git#v0.1.7"
+}
+</code></pre>
+              </div>
+            </div>
+            <aside class="notes">
+              <div>
+                Remember, I taught about automation. We use gulp to get rid of simple recurring manual task.
+                This is a very common approach, so nothing special. But you might recognise that there are a few
+                dependencies in our package.json.
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">Proof of Concept</div>
+            </div>
+            <div class="content">
+              <div class="content__inner">This system has been set up<br>in parallel with the Juno front-end<br>in less than 6 weeks.<br><br>
+                <div class="fragment">Never the less there is plenty<br>room for improvements.</div>
+              </div>
+            </div>
+            <aside class="notes">
+              <div></div>
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">
+              </div>
+            </div>
+            <div class="content">
+              <div class="content__inner"> Do you have questions?</div>
+            </div>
+            <aside class="notes">
+            </aside>
+          </div>
+        </section>
+        <section>
+          <div class="slides__inner">
+            <div class="header">
+              <div class="header__title">
+              </div>
+            </div>
+            <div class="content">
+              <div class="content__inner">
+                <div class="content__chapter">
+                  Thank you!
+                  
+                </div><br><br>
+                <div class="content__links"><strong>Links</strong><br><a href="https://linkedin.com/in/stlehmann">https://linkedin.com/in/stlehmann</a><br><a href="https://junomedical.com/static/styleguide">https://junomedical.com/static/styleguide</a><br><a href="http://atomicdesign.bradfrost.com">http://atomicdesign.bradfrost.com</a><br><a href="http://styleguides.io">http://styleguides.io</a><br><a href="https://css-tricks.com/where-style-guides-fit-into-process">https://css-tricks.com/where-style-guides-fit-into-process</a><br><a href="http://engineering.lonelyplanet.com/2014/05/18/a-maintainable-styleguide.html">http://engineering.lonelyplanet.com/2014/05/18/a-maintainable-styleguide.html</a><br><a href="http://rizzo.lonelyplanet.com">http://rizzo.lonelyplanet.com</a></div>
+              </div>
+            </div>
+            <aside class="notes">
+            </aside>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="js/vendor/head.min.js"></script>
+    <script src="js/vendor/reveal.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
