@@ -1,0 +1,41 @@
+extends ../../templates/slide
+
+block headline
+  include _title.jade
+
+block content
+  | Table of Contents
+  br
+  br
+  ol
+    li.fragment
+      include ../20-situation/_title.jade
+    li.fragment
+      include ../30-first-steps/_title.jade
+    li.fragment
+      include ../40-atomic-design/_title.jade
+    li.fragment
+      include ../50-living-style-guide/_title.jade
+    li.fragment
+      include ../60-styleguide-driven-divelopment/_title.jade
+    li.fragment
+      include ../70-practical-side/_title.jade
+
+block notes
+  div.
+    So let's start by having a brief look at the table of contents. To provide some context beforehand:
+    #[br]
+    #[br]
+    - I will say some words about the initial situation when I started and the first steps.
+    #[br]
+    - In order to explain our approach, I will sum up Atomic Design.
+    #[br]
+    - I will explain why Living Style Guide isn't just a buzzword
+    #[br]
+    - and what Style Guide Driven Development means.
+    #[br]
+    - And finally we will check if everything worked as expected.
+
+
+
+
